@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>턴테이블 - Rco Turntable v1.1</title>
+  <title>IR 리모콘 - Rco Turntable v1.1</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\ud134\ud14c\uc774\ube14";
-    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_name = "IR \ub9ac\ubaa8\ucf58";
+    var mkdocs_page_input_path = "rt_cont.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -47,22 +47,18 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">턴테이블</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">제품의 종류</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">제품의 구성</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">장비의 치수</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">제품의 구매</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">턴테이블</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="rt_cont.html">IR 리모콘</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="rt_cont.html">IR 리모콘</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">버턴 기능</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">회전 조작</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -90,7 +86,7 @@
     
       
     
-    <li>턴테이블</li>
+    <li>IR 리모콘</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -101,43 +97,28 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="rco-turntable">Rco Turntable</h2>
-<p>포토 사진 (photo) 촬영을 위한 턴테이블</p>
-<p><img src="./images/turntable_main.png" width="30%" height="30%"></p>
+                <h2 id="ir">IR 리모트 조작</h2>
+<p>IR 리모콘을 통해서 턴데이블을 조작한다.</p>
+<p><img src="./images/ir_rt_control.png" width="50%" height="50%"></p>
+<h3 id="_1">버턴 기능</h3>
 <ul>
-<li>360° 제품 촬영 지원 (정밀도 0.03° 정밀제어)</li>
-<li>설정 각도별 정지 촬영 지원</li>
-<li>리모콘을 이용한 각도 제어</li>
-<li>원점위치 제어</li>
-<li>컴퓨터, 핸드폰, 임베디드 보드를 이용한 테이블 제어 기능 제공(API)</li>
+<li><code>CH-</code> : Not USE</li>
+<li><code>CH</code> : Not USE</li>
+<li><code>CH+</code> : Not USE</li>
+<li><code>|&lt;&lt;</code> : 왼쪽으로 연속 회전</li>
+<li><code>&gt;&gt;|</code> : 오른쪽으로 연속 회전</li>
+<li><code>&gt;||</code> : 연속회전 정지</li>
+<li><code>－</code> : 회전 속도 감속</li>
+<li><code>＋</code> : 회전 속도 증가</li>
+<li><code>EQ</code> : 번호키를 이용하여 회전값 입력 후 회전 실행</li>
+<li><code>－</code> : 회전 속도 감속</li>
+<li><code>＋</code> : 회전 속도 증가</li>
 </ul>
-<!--
-[![Video Label](http://img.youtube.com/watch?v=vHd7vtadwdc/1.jpg)](https://www.youtube.com/watch?v=vHd7vtadwdc)
--->
-
-<h3 id="_1">제품의 종류</h3>
+<h3 id="_2">회전 조작</h3>
 <ul>
-<li><code>Rco Truntable-IR</code> (IR 리모콘을 이용한 장비 제어) </li>
-<li><code>Rco Turntable-IR-Wifi</code> (IR,Wifi 무선랜을 장비제어 지원)</li>
-<li><code>Rco Turntable-IR-RF</code> (IR,RF 통신을 이용한 장비제어 지원)</li>
-<li><code>Rco Turntable-IR-BT</code> (IR,Bluetooth를 이용한 장비제어 지원)</li>
+<li>번호키를 이용하여 원하는 회전각을 입력하고, EQ 키를 이용하여 회전을 수행한다.</li>
+<li>EQ 키를 다시 클릭하면, 이전 입력된 값으로 회전을 수행한다.</li>
 </ul>
-<h3 id="_2">제품의 구성</h3>
-<ul>
-<li>턴테이블 본체</li>
-<li>IR 리모콘</li>
-<li>전원 공급 아답터 (12V 1A)</li>
-</ul>
-<h3 id="_3">장비의 치수</h3>
-<ul>
-<li>높이 : 80mm</li>
-<li>테이블 원판 : 200mm</li>
-</ul>
-<p><img src="./images/size_case.png" width="50%" height="50%"></p>
-<h3 id="_4">제품의 구매</h3>
-<pre><code>네이버 쇼핑몰 검색 : "RCO 턴테이블" 으로 검색 
-제품 및 A/S 문의 : sgkim123456@naver.com
-</code></pre>
               
             </div>
           </div>
@@ -145,8 +126,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rt_cont.html" class="btn btn-neutral float-right" title="IR 리모콘">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="rf24_cont.html" class="btn btn-neutral float-right" title="RF24 무선제어">Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="index.html" class="btn btn-neutral" title="턴테이블"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -172,8 +155,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-        <span style="margin-left: 15px"><a href="rt_cont.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+        <span style="margin-left: 15px"><a href="rf24_cont.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

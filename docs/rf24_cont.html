@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>턴테이블 - Rco Turntable v1.1</title>
+  <title>RF24 무선제어 - Rco Turntable v1.1</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\ud134\ud14c\uc774\ube14";
-    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_name = "RF24 \ubb34\uc120\uc81c\uc5b4";
+    var mkdocs_page_input_path = "rf24_cont.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -47,26 +47,24 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">턴테이블</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">제품의 종류</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">제품의 구성</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">장비의 치수</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">제품의 구매</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">턴테이블</a>
                     </li>
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="rt_cont.html">IR 리모콘</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="rf24_cont.html">RF24 무선제어</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="rf24_cont.html">RF24 무선제어</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">송신 명령어</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">송신 프로그램 적용 (파이썬)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rf24_contpy">지원 프로그램 (rf24_cont.py)</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -90,7 +88,7 @@
     
       
     
-    <li>턴테이블</li>
+    <li>RF24 무선제어</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -101,43 +99,68 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="rco-turntable">Rco Turntable</h2>
-<p>포토 사진 (photo) 촬영을 위한 턴테이블</p>
-<p><img src="./images/turntable_main.png" width="30%" height="30%"></p>
+                <h2 id="rf24">RF24 리모트 조작</h2>
+<p>nRF24L01 무선 제어 모듈듈을 이용하여 리모터에서 프로그램을 통한 테이블 제어을 한다.<br />
+컴퓨터에서 본 모듈을 연결하여 프로그램 작성을 통한 테이블 제어를 한다.</p>
+<p><img src="./images/nrf24l01.png" style="text-align:center; width:35%; height:35%; margin-right: 30px margin-bottom:10px" ></p>
+<h3 id="_1">송신 명령어</h3>
 <ul>
-<li>360° 제품 촬영 지원 (정밀도 0.03° 정밀제어)</li>
-<li>설정 각도별 정지 촬영 지원</li>
-<li>리모콘을 이용한 각도 제어</li>
-<li>원점위치 제어</li>
-<li>컴퓨터, 핸드폰, 임베디드 보드를 이용한 테이블 제어 기능 제공(API)</li>
+<li>rot cw ~ : 시계 방향으로 연속 돌기</li>
+<li>rot ccw ~ : 반시계 방향으로 연속 돌기</li>
+<li>rot org : 원점으로 지정한 곳으로 복귀</li>
+<li>stop : 회전 중지</li>
+<li>set org : 회전의 원점 지정</li>
+<li>speed 500 : 회전속도 지정, 스피드 값은 "100 ~ 50000" 사이값을 지정할 수 있다.<br />
+  초기값은 "500"  으로 설정되어 있다.</li>
 </ul>
-<!--
-[![Video Label](http://img.youtube.com/watch?v=vHd7vtadwdc/1.jpg)](https://www.youtube.com/watch?v=vHd7vtadwdc)
--->
-
-<h3 id="_1">제품의 종류</h3>
+<h3 id="_2">송신 프로그램 적용 (파이썬)</h3>
 <ul>
-<li><code>Rco Truntable-IR</code> (IR 리모콘을 이용한 장비 제어) </li>
-<li><code>Rco Turntable-IR-Wifi</code> (IR,Wifi 무선랜을 장비제어 지원)</li>
-<li><code>Rco Turntable-IR-RF</code> (IR,RF 통신을 이용한 장비제어 지원)</li>
-<li><code>Rco Turntable-IR-BT</code> (IR,Bluetooth를 이용한 장비제어 지원)</li>
+<li>회전 명령 송신</li>
 </ul>
-<h3 id="_2">제품의 구성</h3>
-<ul>
-<li>턴테이블 본체</li>
-<li>IR 리모콘</li>
-<li>전원 공급 아답터 (12V 1A)</li>
-</ul>
-<h3 id="_3">장비의 치수</h3>
-<ul>
-<li>높이 : 80mm</li>
-<li>테이블 원판 : 200mm</li>
-</ul>
-<p><img src="./images/size_case.png" width="50%" height="50%"></p>
-<h3 id="_4">제품의 구매</h3>
-<pre><code>네이버 쇼핑몰 검색 : "RCO 턴테이블" 으로 검색 
-제품 및 A/S 문의 : sgkim123456@naver.com
+<pre><code class="language-python">from rf24_cont import rf24_dongle
+rf = rf24_dongle()
+rf.send('rot cw ~')
+rf.close()
 </code></pre>
+<ul>
+<li>정지 명령 송신</li>
+</ul>
+<pre><code class="language-python">from rf24_cont import rf24_dongle
+rf = rf24_dongle()
+rf.send('stop')
+rf.close()
+</code></pre>
+<ul>
+<li>적용사례 : 45도 오른쪽 회전, 2초 멈춤을 반복하여 360도 회전 </li>
+</ul>
+<pre><code class="language-python">from rf24_cont import rf24_dongle
+rf = rf24_dongle()
+
+serial_port = 'COM8'
+rf.init(serial_port)
+
+angle = 0
+while ( angle &lt; 360 ) :
+    rf.send('rot cw 45')
+    time.sleep(2)
+    angle += 45
+
+rf.close()
+print('End of Rotation')
+</code></pre>
+<ul>
+<li>윈도우 OS 인 경우 RF 모듈 연결 시, 컴퓨터에 할당된 시리얼 번호을 확인하고,<br />
+프로그램에 해당 포트를 사용한다.<br />
+<strong>"윈도우 키 + X "</strong> 를 누르고, 왼쪽 팝업창이 뜨면, <strong>"M 키"</strong> 를 눌러서, 장치관리자를 실행한다.<br />
+장치관리자 내에서 포트(COM &amp; LPT)를 확인하여, 해당 시리얼 포트 번호를 확인한다.  </li>
+</ul>
+<p><img src="./images/assign_port.png" style="text-align:left; width:35%; height:35%; margin-right: 30px margin-bottom:30px" ></p>
+<h3 id="rf24_contpy">지원 프로그램 (rf24_cont.py)</h3>
+<ul>
+<li>프로그램을 다운로드 하여, 작성하는 파이썬 프로그램과 동일한 디렉토리에 둔다.</li>
+<li>import rf24_cont as rf 를 통하여, 해당 파일의 함수들을 사용한다.</li>
+<li>다운로드 : <a href="rf24_cont.py">rf24_cont.py</a></li>
+</ul>
               
             </div>
           </div>
@@ -145,8 +168,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rt_cont.html" class="btn btn-neutral float-right" title="IR 리모콘">Next <span class="icon icon-circle-arrow-right"></span></a>
       
+        <a href="rt_cont.html" class="btn btn-neutral" title="IR 리모콘"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -172,8 +195,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="rt_cont.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-        <span style="margin-left: 15px"><a href="rt_cont.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
